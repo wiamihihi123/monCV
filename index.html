@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,13 +12,109 @@
         nav { background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         #profile { text-align: center; padding: 100px 20px; background: #e9ecef; }
         #profile img { width: 350px; border-radius: 50%; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .timeline .event { padding: 20px; border-left: 3px solid #007bff; margin: 10px 0; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .services .media { padding: 20px; transition: transform 0.3s; }
-        .services .media:hover { transform: translateY(-10px); }
-        .card { transition: transform 0.3s, box-shadow 0.3s; }
-        .card:hover { transform: scale(1.05); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        #contact form { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        footer { background: #343a40; color: #fff; text-align: center; padding: 10px; }
+
+        #formation {
+    text-align: center; /* Centrer le texte */
+}
+
+#formation .timeline {
+    position: relative;
+    max-width: 800px; /* Limiter la largeur pour un meilleur affichage */
+    margin: 0 auto; /* Centrer la timeline */
+    padding: 0; /* Supprimer le padding inutile */
+}
+
+#formation .timeline-item {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrer les éléments */
+}
+
+#formation .timeline-icon {
+    position: absolute;
+    left: 50%; /* Centrer l'icône */
+    transform: translateX(-50%); /* Ajuster la position */
+    width: 40px;
+    height: 40px;
+    background-color: #a0744a;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#formation .timeline-content {
+    margin-left: 0; /* Supprimer la marge gauche */
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: left; /* Aligner le texte à gauche */
+    max-width: 600px; /* Limiter la largeur du contenu */
+    margin: 0 auto; /* Centrer le contenu */
+}
+
+#formation .timeline-content:hover {
+    transform: translateX(10px);
+}
+        /* Compétences */
+        #competences .skill-box {
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        #competences .skill-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #competences .icon-container i {
+            background-color: #a0744a;
+            color: white;
+            padding: 20px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        #competences .icon-container i:hover {
+            transform: scale(1.2);
+        }
+
+        /* Contact Section Layout */
+        #contact .left-column, #contact .right-column {
+            padding: 20px;
+        }
+
+        .contact-info { margin-bottom: 20px; }
+        .contact-info h4 { font-weight: bold; }
+        .contact-info p { margin: 5px 0; }
+        .contact-info i { margin-right: 10px; }
+        .social-icons i { font-size: 1.5rem; color: #007bff; margin: 10px; }
+        .social-icons i:hover { color: #0056b3; }
+
+        /* Portfolio Cards Layout */
+        .portfolio .card { width: 100%; }
+        .portfolio .card-body { text-align: center; padding: 20px; }
+        .portfolio .card-body h5 { font-size: 1.25rem; font-weight: bold; }
+        .portfolio .card-body p { font-size: 1rem; color: #6c757d; }
+
+        /* Footer */
+        footer {
+            background-color: #a0744a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -30,7 +127,8 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#profile"><i class="bi bi-person"></i> Profil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education"><i class="bi bi-mortarboard"></i> Formation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formation"><i class="bi bi-mortarboard"></i> Formation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#competences"><i class="bi bi-tools"></i> Compétences</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects"><i class="bi bi-folder"></i> Projets</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-envelope"></i> Contact</a></li>
                 </ul>
@@ -41,54 +139,83 @@
     <section id="profile">
         <img src="img.jpeg" alt="Photo de profil">
         <h1 class="mt-3">Wiam Ihihi</h1>
-        <p>Développeuse Full-Stack passionnée par la création de solutions web innovantes.j’ai mené des projets
-            pratiques de création de sites web professionnels, alliant
-            performance et adaptation aux besoins des utilisateurs.</p>
+        <p>Développeuse Full-Stack passionnée par la création de solutions web innovantes.j’ai mené des projets pratiques de création de sites web professionnels, alliant performance et adaptation aux besoins des utilisateurs.</p>
     </section>
 
-    <section id="education" class="py-5">
+    <section id="formation" class="py-5 bg-light">
+        <center>
         <div class="container">
-            <h2 class="text-center mb-4">Parcours de Formation</h2>
+            <h2 class="text-center mb-4">Formation</h2>
             <div class="timeline">
-                <div class="event">
-                    <h4>2023 - Présent : Technicien Spécialisé en Développement Full-Stack</h4>
-                    <p>Institut de Formation Professionnelle, Casablanca</p>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="bi bi-award"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>2023-2025: Formation en Développement Full-Stack</h4>
+                        <p>Institut de Formation Professionnelle, Casablanca</p>
+                    </div>
                 </div>
-                <div class="event">
-                    <h4>2021-2023 : sciences physique </h4>
-                    <p>faculté des sciences, Casablanca</p>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>2021-2023:  sciences physiques et chimiques </h4>
+                        <p>faculté des sciences, Casablanca</p>
+                    </div>
                 </div>
-                <div class="event">
-                    <h4>2021: Baccalauréat</h4>
-                    <p>Lycée zineb nefzaouiya, Casablanca</p>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="bi bi-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>2022 - Bac en Informatique</h4>
+                        <p>Lycée zineb nefzaouiya, Casablanca. </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class="services py-5 bg-light">
+    </section></center>
+    
+    <section id="competences" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Services</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="media bg-white p-3 shadow-sm rounded text-center">
-                        <i class="bi bi-code-slash display-4 text-primary"></i>
-                        <h4>Front-End</h4>
-                        <p>Création de sites interactifs en HTML, CSS, JS et React.</p>
+            <h2 class="text-center mb-4">Compétences</h2>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <div class="skill-box p-4 rounded shadow-lg">
+                        <div class="icon-container mb-3">
+                            <i class="bi bi-code-slash display-3"></i>
+                        </div>
+                        <h4>Développement Front-End</h4>
+                        <p>HTML, CSS, JavaScript, React</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="media bg-white p-3 shadow-sm rounded text-center">
-                        <i class="bi bi-database display-4 text-success"></i>
-                        <h4>Back-End</h4>
-                        <p>Développement d'applications robustes avec PHP, Laravel, MySQL.</p>
+                <div class="col-md-3 mb-4">
+                    <div class="skill-box p-4 rounded shadow-lg">
+                        <div class="icon-container mb-3">
+                            <i class="bi bi-server display-3"></i>
+                        </div>
+                        <h4>Développement Back-End</h4>
+                        <p>PHP, Laravel, Node.js</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="media bg-white p-3 shadow-sm rounded text-center">
-                        <i class="bi bi-cloud display-4 text-info"></i>
-                        <h4>MongoDB</h4>
-                        <p>Gestion de bases de données performantes avec MongoDB.</p>
+                <div class="col-md-3 mb-4">
+                    <div class="skill-box p-4 rounded shadow-lg">
+                        <div class="icon-container mb-3">
+                            <i class="bi bi-git display-3"></i>
+                        </div>
+                        <h4>Gestion de Versions</h4>
+                        <p>Git, GitHub, GitLab</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="skill-box p-4 rounded shadow-lg">
+                        <div class="icon-container mb-3">
+                            <i class="bi bi-database display-3"></i>
+                        </div>
+                        <h4>Gestion des Bases de Données</h4>
+                        <p>MySQL, MongoDB, PostgreSQL</p>
                     </div>
                 </div>
             </div>
@@ -97,32 +224,32 @@
 
     <section id="projects" class="py-5">
         <div class="container">
-            <h2 class="text-center">Projets Académiques</h2>
+            <h2 class="text-center mb-4">Projets Académiques</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card portfolio shadow-sm mb-4">
                         <img src="bd3.jpg" class="card-img-top" alt="Projet 1">
                         <div class="card-body">
-                            <h5>Gestion d'une Pharmacie</h5>
-                            <p>Application web pour la gestion des stocks et des ventes.</p>
+                            <h5 class="card-title">Gestion de Pharmacie</h5>
+                            <p class="card-text">Un projet de gestion d'une pharmacie avec des fonctionnalités d'ajout, modification et suppression des médicaments.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
+                    <div class="card portfolio shadow-sm mb-4">
                         <img src="p3.jpg" class="card-img-top" alt="Projet 2">
                         <div class="card-body">
-                            <h5>Produits de Construction</h5>
-                            <p>Plateforme de gestion des produits et fournisseurs.</p>
+                            <h5 class="card-title">Gestion des ventes de construction </h5>
+                            <p class="card-text">Un projet pour la gestion des ventes d'une entreprise de produits de constructions avec suivi des stocks et des commandes.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card">
-                        <img src="logo1.jpg" class="card-img-top" alt="Projet 3">
+                    <div class="card portfolio shadow-sm mb-4">
+                        <img src="b2.jpg" class="card-img-top" alt="Projet 3">
                         <div class="card-body">
-                            <h5>Gestion Alimentaire</h5>
-                            <p>Application pour le suivi des ventes de produits laitiers.</p>
+                            <h5 class="card-title">ElecKayati - Vente d'Electronic</h5>
+                            <p class="card-text">Une plateforme pour la vente de produits électroniques et électriques, avec gestion des commandes et des produits.</p>
                         </div>
                     </div>
                 </div>
@@ -130,22 +257,55 @@
         </div>
     </section>
 
-    <section id="contact" class="py-5 bg-light">
+    <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="text-center">Contactez-moi</h2>
-            <form class="mx-auto w-50">
-                <input type="text" class="form-control mb-3" placeholder="Votre Nom" required>
-                <input type="email" class="form-control mb-3" placeholder="Votre Email" required>
-                <textarea class="form-control mb-3" rows="4" placeholder="Votre Message" required></textarea>
-                <button type="submit" class="btn btn-primary w-100">Envoyer</button>
-            </form>
+            <h2 class="text-center mb-4">Contact</h2>
+            <div class="row">
+                <div class="col-md-6 left-column">
+                    <div class="contact-info">
+                        <h4><i class="bi bi-telephone"></i> Téléphone</h4>
+                        <p>+212 6 80 67 48 53</p>
+                    </div>
+                    <div class="contact-info">
+                        <h4><i class="bi bi-envelope"></i> Email</h4>
+                        <p>wiamihihi038@gmail.com</p>
+                    </div>
+                    <div class="contact-info">
+                        <h4><i class="bi bi-linkedin"></i> LinkedIn</h4>
+                        <p><a href="https://www.linkedin.com/in/wiam-ihihi-abb46b339/" target="_blank">Voir mon profil LinkedIn</a></p>
+                    </div>
+                
+                <div class="col-md-6 left-column">
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div></div>
+                <div class="col-md-6 right-column">
+                    <h4>Envoyez-moi un message</h4>
+                    <form action="#">
+                        <input type="text" class="form-control mb-2" placeholder="Nom" required>
+                        <input type="email" class="form-control mb-2" placeholder="Email" required>
+                        <textarea class="form-control mb-2" rows="4" placeholder="Message" required></textarea>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Wiam Ihihi - Portfolio</p>
+        <div class="container">
+            <p>&copy; 2024 Wiam Ihihi. Tous droits réservés.</p>
+            <p>
+                <a href="#profile">Profil</a> | 
+                <a href="#formation">Formation</a> | 
+                <a href="#projects">Projets</a> | 
+                <a href="#contact">Contact</a>
+            </p>
+        </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+        </section>
